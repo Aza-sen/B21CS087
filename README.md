@@ -116,4 +116,46 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
 20. Outline the steps involved in the boot process of XV6. What happens from the moment the computer is powered on to when the XV6 kernel is loaded into memory?
 
 ## Answers
-Please write your answers here
+
+
+1. b. A Unix-like operating system
+
+2. b. Linux
+
+3. d. simple
+
+4. a. As functions in the C standard library
+
+5. b. 256
+
+6. d. Fish
+
+7. a. Round-robin scheduling
+
+8. c. Virtual Memory
+
+9. c. Using software interrupts
+
+10. a. Yes
+
+11. c. MIT
+
+12. A process can be in the following states: Executing: Using the Processor and other resources to execute its instructions. Waiting: Waiting for I/O Ready: Waiting in the round robin queue to be scheduled next Terminated: Finished execution or as decided by the scheduler.
+
+13. The file system in XV6 is a simple, Unix-like file system that provides basic file management functionalities. The structure of the file system consists of several key components: Data: Whatever information the file contains Metadata: Includes the version history and access priviledges for security.
+
+14. System Calls:
+        Interface to the operating system kernel.
+        Examples in XV6: fork(), exec(), open(), etc.
+
+    Library Functions:
+        User-level routines, often abstracting system calls.
+        Examples in XV6: printf(), malloc(), strcpy(), etc.
+
+15. Memory paging involves dividing the secondary memory into equal-sized logical blocks called pages. In XV6, paging is employed to enhance the locality of reference. When the CPU needs data, instead of accessing it directly from the memory, entire pages are loaded into faster but smaller memory, such as main memory or cache. This approach optimizes the retrieval of data within a page, particularly beneficial for frequently used data grouped together, like arrays or loop variables, thereby accelerating the data acquisition process.
+16. The commands in XV6 terminal are unix based: mkdir: Creates new directory of specified name ls: Lists the current working directory cd: Changes directory to the specified directory
+17. The XV6 Operating System facilitates Multiprocessing, enabling concurrent execution of multiple processes through context switching. When several processes need access to the same critical resource, process synchronization becomes crucial. The sequence in which these processes execute is significant, as they may alter the shared resource. XV6 addresses this by employing Inter-Process Communication (IPC), ensuring effective synchronization among processes. This allows the scheduler to determine when to perform context switches between processes and when to refrain from doing so.
+18. Interrupts are used to stop a process from making changes to certain resources in order to avoid deadlock.
+19. Virtual memory creates the illusion of a significantly larger main memory than is physically available. This is essential when running processes that exceed the size of the main memory, as seen in applications like games. In XV6, only specific segments of a process are loaded into the main memory, dynamically switching based on demand. XV6 achieves this through demand paging, loading a page into the main memory only when absolutely necessary. Virtual memory not only allows efficient utilization of limited main memory but also enhances multi-programming capabilities, enabling the simultaneous execution of multiple large processes.
+20. In XV6, the bootloader is a dedicated program located at a predefined location. Its primary role is to load the kernel into the main memory and initiate all the necessary dependencies for this process.
+21. 
